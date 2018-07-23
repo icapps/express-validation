@@ -40,6 +40,7 @@ describe('validate body', function () {
         .send(login)
         .expect(400)
         .end(function (err, res) {
+          console.log(res.text);
           var response = JSON.parse(res.text);
           response.errors.length.should.equal(1);
           done();
